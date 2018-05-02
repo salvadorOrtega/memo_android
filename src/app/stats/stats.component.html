@@ -1,0 +1,25 @@
+<div #statsContainer id="statsContainer" class="container variables statsContainerStart" style="padding: 0px;">
+    <div class="ct-chart-wrap" style="max-width: none;">
+        <div class="ct-chart ct-golden-section" style="max-width: none;"></div>
+    </div>
+    <div class="row" style="border-top: 1px solid black; margin: auto; background-color: transparent;">
+        <div (click)="onUserNBackClick(-1)" class="column" style="width:33%; text-align: center; margin: auto; cursor: pointer;">
+            <i class="material-icons" style="font-size: 30px; border-top: 7px solid transparent;">
+                keyboard_arrow_down
+            </i>
+        </div>
+        <div class="column" style="color: rgba(0, 0, 0, 0.70); width: 33%; text-align: center; margin: auto; font-size: 25px; border-left: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5); background-color: transparent;">
+            {{nBackValue}}
+        </div>
+        <div (click)="onUserNBackClick(1)" class="column" style="text-align: center; margin: auto; width: 33%; cursor: pointer;">
+            <i class="material-icons" style="font-size: 30px; border-top: 7px solid transparent;">
+                keyboard_arrow_up
+            </i>
+        </div>
+    </div>
+</div>
+<div *ngIf="noDataAvailable" class="container variables" style="margin-top: 10px;">
+    <p class="container" id="noDataMessage">
+        More data needed for this difficulty. Keep playing to display your scores!
+    </p>
+</div>

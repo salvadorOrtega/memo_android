@@ -1,0 +1,23 @@
+@keyframes pushLeft {
+    0% {
+
+    }
+    50% {
+        transform: translateX(-100rem);
+         
+    }
+    50.01% {
+        transform: translateX(100rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.transitionLeft {
+    animation: pushLeft 1s ease-in-out;
+}
+
+.transitionRight {
+    animation: pushLeft 1s  ease-in-out reverse;
+}

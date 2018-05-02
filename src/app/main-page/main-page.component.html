@@ -1,0 +1,110 @@
+<div id="mainPageView" class="container">
+    <div class="row" style="min-height: 40px; margin-left: -15px; margin-right: -15px;">
+        <div class="col-4 mainMenuControlBtn">
+            <button (click)="changeMenuDisplay('settings')" class="material-icons fillDivContainer"
+                [ngClass]="{'buttonClickedColor': willChangeTo === 'settings'}">
+                settings
+            </button>
+        </div>
+        <div class="col-4 mainMenuControlBtn">
+            <button (click)="changeMenuDisplay('account')" style="border-left: 1px solid black;
+                    border-right: 1px solid black;" class="material-icons fillDivContainer" [ngClass]="{'buttonClickedColor': willChangeTo === 'account'}">
+                view_list
+            </button>
+        </div>
+        <div class="col-4 mainMenuControlBtn">
+            <button (click)="changeMenuDisplay('info')" class="material-icons fillDivContainer" [ngClass]="{'buttonClickedColor': willChangeTo === 'info'}">
+                help
+            </button>
+        </div>
+    </div>
+    <div #formGroupRef id="formGroupRef" class="container form-group col-xs-12 col-sm-12 maximizing">
+        <div *ngIf="buttonActivated === 'settings'" style="text-align: center;">
+            <div class="container">
+                <label for="userNBack" style="font-size: 20px;">
+                    Dual-N-Back Level
+                </label>
+                <div class="row upDownMenuButtonGroup" id="userNBack" >
+                    <div (click)="onUserNBackClick(-1)" class="column upDownMenuButton">
+                        <i class="material-icons upDownMenuArrowIcon">
+                            keyboard_arrow_down
+                        </i>
+                    </div>
+                    <div class="column upDownMenuButton upDownMenuCenter" >
+                        {{userNBackValue}}
+                    </div>
+                    <div (click)="onUserNBackClick(1)" class="column upDownMenuButton">
+                        <i class="material-icons upDownMenuArrowIcon">
+                            keyboard_arrow_up
+                        </i>
+                    </div>
+                </div>
+                <label for="turnsPerGame" style="font-size: 20px; padding-top: 20px;">
+                    Turns per game:
+                </label>
+                <div class="row upDownMenuButtonGroup" id="turnsPerGame">
+                    <div (click)="onTurnsPerGameClick(-1)" class="column upDownMenuButton">
+                        <i class="material-icons upDownMenuArrowIcon">
+                            keyboard_arrow_down
+                        </i>
+                    </div>
+                    <div class="column upDownMenuButton upDownMenuCenter">
+                        {{turnsPerGame}}
+                    </div>
+                    <div (click)="onTurnsPerGameClick(1)" class="column upDownMenuButton">
+                        <i class="material-icons upDownMenuArrowIcon">
+                            keyboard_arrow_up
+                        </i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="switch" style="margin: auto; padding-top: 20px;">
+                        <div>
+                            <label for="immediateFeedback" style="font-size: 20px;">
+                                Immediate Feedback
+                            </label>
+                        </div>
+                        <label id="immediateFeedback" style="font-size: 15px;">
+                            Off 
+                            <input  (click)="setUserWantsImmediateFeedback()" type="checkbox" [checked]="userWantsImmediateFeedback">
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="buttonActivated === 'account'">
+            <app-main-scores></app-main-scores>
+        </div>
+        <div #infoElemRef *ngIf="buttonActivated === 'info'" id="info" style="overflow: auto; max-height: 60vh;">
+            <div class="container" id="infoDisplay">
+                <p>
+                    <strong class="infoTextTitle">What is Dual-N-Back?</strong>
+                    <br> N-Back is a working memory exercise where you have to remember the previous N items and signal when
+                    the next one is a repeat. Dual-N-Back takes the task a step further by having you remember two different
+                    kinds of inputs, one auditory, one visual, at the same time. It is the only mental workout game with
+                    any credible research showing that practicing and getting better at it will make you better at other
+                    cognitive skills unrelated to the game itself.
+                    <br><br>
+                    <strong class="infoTextTitle">How to play</strong>
+                    <br> In the settings, choose your n-back level of difficulty and how many turns per game you want. Let's
+                    say you go with level 2, or 2-back. Go to the game page and press the square button to begin; a 3x3 grid
+                    will appear.
+                    <br><br> You'll see a square on the grid activate by turning red and hear a letter sound on each turn.
+                    Press the left button (or left arrow-key on your keyboard) if the square activated is the same one that
+                    got activated 2 turns ago. Press the right button (or the right arrow-key on your keyboard) if the sound
+                    you heard is the same one you heard 2 turns ago.
+                    <br><br> If you're playing n-back level 3, or 3-back, press the left button if the square activated is
+                    the same one that got activated 3 turns ago, and similarly for sound by pressing the right button. Activating
+                    'Immediate Feedback' in the settings will cause the game to give you instant response every time you
+                    press the buttons at each turn, showing you a green shadow if you got it right and a red one if you didn't.
+                    <br><br>
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>

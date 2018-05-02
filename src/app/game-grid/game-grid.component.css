@@ -1,0 +1,197 @@
+.main-container {
+    --control-start-color: rgb(28, 80, 100); 
+    --control-while-game-color: rgba(28, 80, 100, 0.88); 
+    --nonactivated-grid-color: #3A333A;
+    --activated-grid-color: rgb(255, 20, 47); 
+    --grid-box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(76, 76, 76, 0.4); 
+    --activated-duration: 1.5s;
+    --transition-duration: 1s;
+    --transition-style: ease-in-out;
+}
+
+@keyframes gridStart {
+	0% {
+		box-shadow: none;
+    }
+	80% {
+		box-shadow: var(--grid-box-shadow);
+	}
+	100% {
+		box-shadow: var(--grid-box-shadow);
+	}
+}
+
+@keyframes gridEnd {
+	0% {
+		box-shadow: var(--grid-box-shadow);
+	}
+	20% {
+		box-shadow: var(--grid-box-shadow);
+    }
+	100% {
+		box-shadow: none;
+	}
+}
+
+@keyframes inAndOut {
+	50% {
+		box-shadow: none;
+		background-color: var(--activated-grid-color);
+	}
+	100% {
+		background-color: var(--nonactivated-grid-color);
+	}
+}
+
+@keyframes controlButtonStart {
+    0% {
+        box-shadow: none;
+        background-color: transparent;
+	}
+	100% {
+        background-color: var(--control-start-color);
+		box-shadow: var(--grid-box-shadow);
+	}
+}
+
+@keyframes controlButtonForward {
+    80% {
+        box-shadow: var(--grid-box-shadow);
+    }
+    100% {
+        background-color: var(--control-start-color);
+		box-shadow: var(--grid-box-shadow); 
+    }
+}
+
+@keyframes controlButtonRollBack {
+    0% {
+        background-color: var(--control-start-color);
+        box-shadow: var(--grid-box-shadow);    
+    }
+    100% {
+        box-shadow: none;
+        background-color: var(--control-while-game-color);
+    }
+}
+
+@keyframes correctFeedbackTransition {
+    50% {
+        background-color: rgba(77, 172, 254, 0.42);
+    }
+    100% {
+        background-color: var(--nonactivated-grid-color);
+    }
+}
+
+@keyframes incorrectFeedbackTransition {
+    50% {
+        background-color: rgba(164, 0, 50, 0.32);
+    }
+    100% {
+        background-color: var(--nonactivated-grid-color);
+    }
+}
+
+.controlButtonWhileGame {
+    background-color: var(--control-while-game-color);
+}
+
+.controlButtonRollBack {
+    box-shadow: var(--grid-box-shadow);
+    animation-name: controlButtonRollBack;
+    animation-duration: var(--transition-duration);
+    animation-timing-function: var(--transition-style);
+}
+
+.controlButtonForward {
+    background-color: var(--control-while-game-color);
+    animation-name: controlButtonForward;
+    animation-duration: var(--transition-duration);
+    animation-timing-function: var(--transition-style);
+}
+
+.controlButtonStarted {
+    background-color: var(--control-start-color);
+    box-shadow: var(--grid-box-shadow);
+}
+
+.controlButtonStart {
+    animation-name: controlButtonStart;
+    animation-duration: var(--transition-duration);
+    animation-timing-function: var(--transition-style);
+}
+
+.gridOnGameEnd {
+    animation-name: gridEnd;
+    animation-duration: var(--transition-duration);
+    animation-timing-function: var(--transition-style);
+}
+
+.gridBeforeGameStart {
+    background-color: transparent;
+}
+
+.gridBeforeGameStart:after{
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+.main-container {
+	height : 100%;
+	width: 100%;
+	margin-top: 10px;
+    max-width: 100vh;
+    padding: 0;
+}
+
+#gridBox {
+	margin: 5%;
+}
+
+.main-container:focus {
+	outline: none;
+}
+
+.row {
+    margin: 0;
+}
+
+.gridIn {
+    animation-name: inAndOut;
+    animation-duration: var(--activated-duration);
+    animation-timing-function: var(--transition-style);
+}
+
+.grid {
+    background-color: var(--nonactivated-grid-color);
+    box-shadow: var(--grid-box-shadow);
+}
+
+.grid:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+.transitionIn {
+    background-color: var(--nonactivated-grid-color);
+    animation-name: gridStart;
+    animation-duration: var(--transition-duration);
+    animation-timing-function: var(--transition-style);
+}
+
+.transitionIn:after{
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+.correctFeedback {
+    animation: correctFeedbackTransition 1s ease-in-out;
+}
+
+.incorrectFeedback {
+    animation: incorrectFeedbackTransition 1s ease-in-out;
+}

@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* 
+This import fixes a bug that prevented the app from compiling for production.
+I also had to delete the .angular-cli.json bootstrap reference in its styles attribute. */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+@import "~material-design-icons/iconfont/material-icons.css";
+@import "~chartist/dist/chartist.css";
+
+html {
+	overflow-y: hidden;
+}
+
+body {
+	background-color: #3A333A;
+	overflow-x: hidden;
+}
+
+.ct-series-a .ct-line {
+    stroke: #1c5a64;
+}
+.ct-series-a .ct-point {
+stroke: #1c5a64;
+}
+.ct-series-b .ct-line {
+stroke: #ff222f;
+}
+.ct-series-b .ct-point {
+stroke: #ff222f;
+}
+.ct-chart-wrap {
+border: transparent;
+border-radius: 10px;
+max-width: 620px;
+padding-top: 3px;
+}
+.ct-chart {
+border: transparent;
+border-radius: 10px;
+max-width: 620px;
+}
+.ct-chart .ct-legend {
+line-height: 0.7;
+position: relative;
+z-index: 10;
+list-style: none;
+text-align: center;
+}
+.ct-chart .ct-legend li {
+position: relative;
+padding-left: 20px;
+padding-right: 5px;
+cursor: pointer;
+display: inline-block;
+}
+.ct-chart .ct-legend li:before {
+width: 15px;
+height: 15px;
+position: absolute;
+left: 0;
+content: '';
+border: 3px solid transparent;
+border-radius: 2px;
+}
+.ct-chart .ct-legend li:nth-child(1)::before {
+background-color: #1c5a64;
+}
+.ct-chart .ct-legend li:nth-child(2)::before {
+background-color: #ff222f;
+}
+

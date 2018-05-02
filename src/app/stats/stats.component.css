@@ -1,0 +1,58 @@
+.variables {
+    --canvas-height: 100%;
+    --canvas-width: 100%;
+    --canvas-margin-top: 20px;
+    --canvas-max-width: 100vh;
+    --canvas-min-width: 300px;
+    --canvas-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+#statsContainer {
+    height: var(--canvas-height);
+    width: var(--canvas-width);
+    margin-top: var(--canvas-margin-top);
+    max-width: var(--canvas-max-width);
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+    user-select: none;
+}
+
+.statsContainerStart {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.notEnoughData {
+    height: var(--canvas-height);
+    width: var(--canvas-width);
+    margin-top: var(--canvas-margin-top);
+    max-width: var(--canvas-max-width);
+    transition: 1s;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes noDataMessageTransitionIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        background-color: rgb(28, 90, 100);
+    }
+}
+
+#noDataMessage {
+    width: var(--canvas-width);
+    max-width: var(--canvas-max-width);
+    animation: 1s noDataMessageTransitionIn;
+    font-weight: 600;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(28, 90, 100);
+    border-radius: 10px;
+    box-shadow: var(--canvas-box-shadow);
+}

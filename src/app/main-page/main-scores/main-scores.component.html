@@ -1,0 +1,35 @@
+<div class="row">
+    <p *ngIf="scores.length > 0" style="color: #26a69a; font-size: 20px; margin: auto;">Scores for N-Back Level {{nBackData}}</p>
+    <p *ngIf="scores.length > 0" style="margin: auto; color: #26a69a; font-size: 15px;">(up to 15 most recent)</p>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offeset-1 col-md-offset-2" style="min-width: 100%;" id="scoreTable">
+        <div *ngIf="scores.length > 0">
+            <table class="tableData" style="color: #26a69a;">
+                <tr class="tableData">
+                    <th *ngFor="let header of tableHeaders">{{header}}</th>
+                </tr>
+                <tr *ngFor="let score of scores">
+                    <td  class="tableData">
+                        {{score[0]}}%
+                    </td>
+                    <td  class="tableData">
+                        {{score[1]}}%
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row clearLevelProgressRow">
+        <button *ngIf="scores.length > 0 && !confirmAsk" class="col-6 clearLevelProgressButton" (click)="isUserSure(true)">
+            Clear Level Progress
+        </button>
+        <button *ngIf="scores.length > 0 && confirmAsk" class="confirm-button col-6" (click)="onClearProgress()" id="yesClearConfirmButton">
+            Confirm Clear?
+        </button>
+        <button *ngIf="scores.length > 0 && confirmAsk" class="confirm-button col-6" (click)="isUserSure(false)" id="noClearConfirmButton">
+            Keep Data
+        </button>
+        <button *ngIf="scores.length === 0 && !confirmAsk" class="col-6" style="background-color: rgb(255, 34, 47); min-width: 100%;" >
+            No Scores For This Level
+        </button>
+    </div>
+</div>

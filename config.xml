@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.salortega.memo" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>memo</name>
+    <description>
+        Train your working memory using the power of dual-n-back.
+    </description>
+    <author email="salortegaest@gmail.com">
+        Salvador Ortega
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="res/icon/android/memo_icon.png" />
+    <platform name="android">
+        <preference name="android-minSdkVersion" value="24" />
+    </platform>
+    <preference name="Orientation" value="portrait" />
+    <plugin name="cordova-plugin-nativestorage" spec="^2.3.1" />
+    <engine name="android" spec="^7.0.0" />
+</widget>

@@ -1,0 +1,15 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.salortega.memo"
+    }
+  },
+  "dependent_plugins": {}
+}

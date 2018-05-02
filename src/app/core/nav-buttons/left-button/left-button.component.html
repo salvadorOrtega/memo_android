@@ -1,0 +1,23 @@
+<div (click)="onClick()" class="corners left-button" #leftButton style="display: table; cursor: pointer; user-select: none;">
+    <div *ngIf="gameIsOn" class="material-icons materialIconStyle">
+        remove_red_eye
+    </div>
+
+    <div *ngIf="!gameIsOn && router.url === '/main'" class=" material-icons materialIconStyle">
+        timeline
+    </div>
+    <div *ngIf="!gameIsOn && router.url === '/game'" class="material-icons materialIconStyle">
+        menu
+    </div>
+    <div *ngIf="!gameIsOn && router.url === '/stats'" class=" material-icons materialIconStyle">
+        grid_on
+    </div>
+
+</div>
+
+<div *ngIf="leftButtonFeedbackColor === 'green'" class="greenShadow left-button-feedback-shadow" z-index="-1">
+
+</div>
+<div *ngIf="leftButtonFeedbackColor === 'red'" class="redShadow left-button-feedback-shadow" z-index="-1">
+
+</div>

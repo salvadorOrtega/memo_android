@@ -1,0 +1,10 @@
+<div class="container main-container">
+	<div id="gridBox">
+		<div *ngFor="let row of gridArrayCoordinates" class="row">
+			<app-grid-pane *ngFor="let grid of row" appSwitch [isCenter]="grid[0] === 1 && grid[1] === 1" [xPosition]="grid[0]" [yPosition]="grid[1]"
+			 class="col" style="margin: 2px;">
+			</app-grid-pane>
+		</div>
+	</div>
+	<audio #audioElement type="audio/mp3"></audio>
+</div>

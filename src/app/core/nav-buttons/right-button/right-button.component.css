@@ -1,0 +1,83 @@
+.right-button {
+    background-color: rgb(255, 34, 47);
+    box-shadow: 0px 10px 10px 0 rgba(0, 0, 0, 0.4);
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    position: relative; 
+    float: right;
+    transition: 0.3s; 
+    width: 150px; 
+    height: 100px;
+}
+
+.materialIconStyle {
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+}
+
+.right-button-feedback-shadow {
+    position: fixed; 
+    right: 50px;
+    top: 75%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.right-button-while-game {
+    background-color: rgb(255, 34, 47); 
+    box-shadow: 0px 10px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.right-button-while-game-clicked {
+    background-color: rgba(255, 34, 47, 0.76);
+    box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.right-button-while-game-shape {
+    transition: 0.3s;
+    float: right;
+    margin-right: 50px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px; 
+}
+
+.corners {
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+}
+
+
+@keyframes redShadowAnimation {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 30px 10px rgba(255, 37, 47, 0.67);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+.redShadow {
+    animation: 1s redShadowAnimation ease-in-out;
+}
+
+@keyframes greenShadowAnimation {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 30px 10px rgb(47, 140, 177);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+.greenShadow {
+    animation: 1s greenShadowAnimation ease-in-out;
+}
